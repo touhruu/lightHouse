@@ -3,10 +3,10 @@ import './style.css'
 import App from './App.vue'
 import { router } from './router'
 import { store } from './store'
-import vuetify from './plugins/vuetify'
+import PrimeVue from 'primevue/config'
 
 createApp(App)
 .use(store)
 .use(router)
-.use(vuetify)
+.use(PrimeVue)
 .mount('#app')
