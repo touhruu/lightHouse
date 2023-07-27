@@ -9,7 +9,6 @@
         <p class="menu__logo-name">LightHouse</p>
       </div>
     </router-link>
-    
     <div class="menu__item">
       <img class="menu__item-picture" src="src/assets/icons/board1.png">
       <p class="menu__item-name">Board</p>
@@ -26,9 +25,7 @@
       <img class="menu__item-picture" src="src/assets/icons/exit1.png">
       <p class="menu__item-name">Exit</p>
     </div>
-    
   </div>
-  
 </template>
 
 <script lang="ts" setup>
@@ -62,7 +59,6 @@
   }
 
   &__logo-picture{
-    //width: 50px;
     transform: scale(.81, .81);
     transition: 1.5s;
     object-fit: contain;
@@ -107,7 +103,6 @@
 
 .activ{
   width: 80px;
-  //overflow: hidden;
   padding-left: 0px;
   transition: 1.2s;
 }
@@ -138,7 +133,6 @@
 
 .activ>.router-link-active>.menu__logo>.menu__logo-picture{
   transform: scale(0.65, 0.65);
-  //width: 40px;
   transition: 1s;
 }
 
