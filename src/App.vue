@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useStore } from "vuex";
+// import { computed } from "vue";
+// import { useStore } from "vuex";
 import menuBurger from "./components/menu-burger.vue";
-const store = useStore();
+// const store = useStore();
 
 // const data = computed(() => store.state.test.data);
 // store.commit('test/setData', 'не кусь')
@@ -19,9 +19,19 @@ const store = useStore();
 </template>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+
   *{
     margin: 0px;
     padding: 0px;
+  }
+
+  p{
+    font-family: 'Kalam', cursive;
+  }
+
+  a{
+    text-decoration: none;
   }
 
   .conteiner{

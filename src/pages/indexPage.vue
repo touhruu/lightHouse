@@ -1,5 +1,5 @@
 <template>
-<div>Это главная страница моего сайта!</div>
+<div></div>
 </template>
 
 <script lang="ts" setup>
