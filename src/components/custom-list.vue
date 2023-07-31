@@ -60,6 +60,7 @@ img{
       border-radius: 8px;
       transition: .5s;
       user-select: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     &__item:hover{
