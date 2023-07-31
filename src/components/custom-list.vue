@@ -1,7 +1,7 @@
 <template>
   <img src="https://i.pinimg.com/1200x/41/a8/1a/41a81a743b0139fc682ba46b4bd354ef.jpg" ref="userAvatar">
   <div class="list" v-if="isOpen" ref="list">
-    <div class="list__item" v-for="item in items">
+    <div class="list__item" v-for="item in items" :key="item.id">
       <p>{{ item.name }}</p>
     </div>
   </div>
