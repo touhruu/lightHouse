@@ -32,10 +32,8 @@
   import {Ref, ref} from "vue"
   const stateCollabse:Ref<boolean> = ref(false);
   
-  console.log(stateCollabse.value)
   const collabs = () => {
     stateCollabse.value = !stateCollabse.value;
-    console.log(stateCollabse.value)
   }
 </script>
 

@@ -51,7 +51,6 @@ import "primevue/resources/themes/lara-light-indigo/theme.css";
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: end;
-    padding: 10px 40px 0 0;
+    padding: 10px 40px 0 40px;
   }
 </style>
