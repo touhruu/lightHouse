@@ -1,5 +1,5 @@
 <template>
-  <img src="https://i.pinimg.com/1200x/41/a8/1a/41a81a743b0139fc682ba46b4bd354ef.jpg" ref="clickAvatar">
+  <img src="https://i.pinimg.com/1200x/41/a8/1a/41a81a743b0139fc682ba46b4bd354ef.jpg" ref="userAvatar">
   <div class="list" v-if="isOpen" ref="list">
     <div class="list__item" v-for="item in items">
       <p>{{ item.name }}</p>
@@ -12,7 +12,7 @@ import { Ref, onMounted, ref, toRefs } from 'vue';
 import { IMenuUser } from '../store/types'
 
 const isOpen:Ref<boolean> = ref(false)
-const clickAvatar:Ref = ref()
+const userAvatar:Ref = ref()
 const list:Ref = ref()
 
 const props = defineProps({
@@ -22,7 +22,7 @@ const props = defineProps({
 const { items } = toRefs(props);
 
 onMounted(() => {
-  clickAvatar.value.addEventListener("click", function () {
+  userAvatar.value.addEventListener("click", function () {
     if(!isOpen.value)
     setTimeout(() => isOpen.value = true, 0);
   });
