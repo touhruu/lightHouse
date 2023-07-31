@@ -42,6 +42,7 @@
 <style scoped lang="scss">
 .menu{
   width: 300px;
+  min-width: 300px;
   height: 100vh;
   box-shadow: 12px 0 15px -4px rgba(34, 60, 80, 0.2);
   padding: 30px 0px 0px 0px;
@@ -102,6 +103,7 @@
 }
 
 .activ{
+  min-width: 80px;
   width: 80px;
   padding-left: 0px;
   transition: 1.2s;
