@@ -9,15 +9,15 @@
         class="editor__input" 
         type="text" 
         placeholder="Enter title board" 
-        v-model="titleBoard" />
+        v-model="board.title" />
         <p class="editor__wrapper-input-text">- Enter board name</p>
       </div>
       <div
         class="editor__example"
-        :style="{ backgroundImage: `${color}`, backgroundColor: `#${color}` }"
+        :style="{ backgroundImage: `${board.color}`, backgroundColor: `#${board.color}` }"
         :class="{
-          editor__color: color.length == 6,
-          'editor__animation-backgraund': checked,
+          editor__color: board.color.length == 6,
+          'editor__animation-backgraund': board.animation,
         }"
       >
         <div class="editor__example-board">
@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="editor__wrapper-checkbox">
-        <Checkbox v-model="checked" :binary="true" />
+        <Checkbox v-model="board.animation" :binary="true" />
         <p class="editor__checkbox__text">Stop animation</p>
       </div>
       <div class="editor__gradients-wrapper-wrapper">
@@ -62,7 +62,7 @@
             ></button>
           </template>
         </div>
-        <ColorPicker v-model="color" inline />
+        <ColorPicker v-model="board.color" inline />
       </div>
       <button class="editor__button" @click="addBoard()">Create</button>
     </div>
@@ -70,34 +70,17 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, ref, watch } from "vue";
+import { Ref, ref } from "vue";
 import { IGradient } from "../store/types";
 import { IBoard } from "../store/types";
 
 const visible: Ref<boolean> = ref(false);
-const color: Ref<string> = ref("linear-gradient(-45deg, rgb(238, 174, 202) 0%, rgb(148, 187, 233) 100%)");
-const checked: Ref = ref();
-const titleBoard: Ref<string> = ref('');
 
-const board:IBoard = {
+const board:Ref<IBoard> = ref({
   title: '',
-  color: color.value,
+  color: 'linear-gradient(-45deg, rgb(238, 174, 202) 0%, rgb(148, 187, 233) 100%)',
   animation: false
-}
-
-watch(color, () => {
-  console.log(color.value);
-  board.color = color.value
-});
-
-watch(checked, () => {
-  console.log(checked.value);
-  board.animation = checked.value
-});
-
-watch(titleBoard, () => {
-  board.title = titleBoard.value
-});
+})
 
 const gradients: Array<IGradient> = [
   {
@@ -135,11 +118,11 @@ const gradients: Array<IGradient> = [
 ];
 
 const getColor = (colorGradient: string) => {
-  color.value = colorGradient;
+  board.value.color = colorGradient;
 };
 
 const addBoard = () => {
-  console.log(board)
+  console.log(board.value)
 }
 </script>
 
