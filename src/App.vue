@@ -31,6 +31,7 @@ import "primevue/resources/themes/lara-light-indigo/theme.css";
   *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Kalam', cursive;
   }
 
   p{
@@ -51,7 +52,24 @@ import "primevue/resources/themes/lara-light-indigo/theme.css";
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: end;
-    padding: 10px 40px 0 0;
+    padding: 10px 40px 0 40px;
+  }
+
+  .p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+    box-shadow: 0 0 0 0.2rem #0b8fb863;
+  }
+
+  .p-colorpicker-panel {
+    background: none;
+    border: none;
+  }
+
+  .p-colorpicker-panel .p-colorpicker-color-selector {
+    top: 0 !important;
+    left: 0 !important;
+  }
+
+  .p-colorpicker-panel .p-colorpicker-hue {
+    top: 0 !important;
   }
 </style>

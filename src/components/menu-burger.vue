@@ -123,7 +123,7 @@
   align-items: center;
   flex-wrap: wrap;
   transition: 1s;
-  height: 90px;
+  height: 104px;
 }
 
 .activ>.router-link-active>.menu__logo>.menu__logo-name{

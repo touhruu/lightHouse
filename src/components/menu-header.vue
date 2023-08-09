@@ -1,8 +1,5 @@
 <template>
 <div class="menu">
-  <div class="menu__avatar-user">
-
-  </div>
   <CustomList :items="menuElement"/>  
 </div>
 
@@ -32,4 +29,9 @@ const menuElement = [
 </script>
 
 <style scoped>
+.menu{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
 </style>
