@@ -1,19 +1,27 @@
 <template>
   <img src="https://i.pinimg.com/1200x/41/a8/1a/41a81a743b0139fc682ba46b4bd354ef.jpg" ref="userAvatar">
   <div class="list" v-if="isOpen" ref="list">
-    <div class="list__item" v-for="item in items" :key="item.id">
+    <div class="list__item" v-for="item in items" :key="item.id" @click="selectItem(item)">
       <p>{{ item.name }}</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useStore } from 'vuex';
 import { Ref, onMounted, ref, toRefs } from 'vue';
 import { IMenuUser } from '../store/types'
 
+const store = useStore();
 const isOpen:Ref<boolean> = ref(false)
 const userAvatar:Ref = ref()
 const list:Ref = ref()
+
+enum HEADER_MENU_ITEMS{
+  PROFILE = 1,
+  SETTINGS,
+  EXIT
+}
 
 const props = defineProps({
   items: Array<IMenuUser>
@@ -31,6 +39,13 @@ onMounted(() => {
     isOpen.value = false;
   });
 });
+
+const selectItem = (item:any) => {
+  console.log(HEADER_MENU_ITEMS.EXIT)
+  if(item.id === HEADER_MENU_ITEMS.EXIT){
+    store.dispatch('auth/logout')
+  }
+}
 
 </script>
 
