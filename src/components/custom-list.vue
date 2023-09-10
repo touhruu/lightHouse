@@ -8,20 +8,16 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from 'vuex';
 import { Ref, onMounted, ref, toRefs } from 'vue';
+import { useStore } from 'vuex';
 import { IMenuUser } from '../store/types'
+import { HeaderMenuItems } from '../store/types'
 
 const store = useStore();
 const isOpen:Ref<boolean> = ref(false)
 const userAvatar:Ref = ref()
 const list:Ref = ref()
 
-enum HEADER_MENU_ITEMS{
-  PROFILE = 1,
-  SETTINGS,
-  EXIT
-}
 
 const props = defineProps({
   items: Array<IMenuUser>
@@ -41,8 +37,7 @@ onMounted(() => {
 });
 
 const selectItem = (item:any) => {
-  console.log(HEADER_MENU_ITEMS.EXIT)
-  if(item.id === HEADER_MENU_ITEMS.EXIT){
+  if(item.id === HeaderMenuItems.EXIT){
     store.dispatch('auth/logout')
   }
 }
