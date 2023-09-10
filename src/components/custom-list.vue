@@ -36,7 +36,7 @@ onMounted(() => {
   });
 });
 
-const selectItem = (item:any) => {
+const selectItem = (item:IMenuUser) => {
   if(item.id === HeaderMenuItems.EXIT){
     store.dispatch('auth/logout')
   }
