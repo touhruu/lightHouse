@@ -1,12 +1,12 @@
-import './style.css';
-import App from './App.vue';
+import { createApp } from 'vue';
 import PrimeVue from 'primevue/config';
 import Dialog from 'primevue/dialog';
 import ColorPicker from 'primevue/colorpicker';
 import Checkbox from 'primevue/checkbox';
-import { createApp } from 'vue';
 import { router } from './router';
 import { store } from './store';
+import App from './App.vue';
+import './style.css';
 
 createApp(App)
 .use(store)

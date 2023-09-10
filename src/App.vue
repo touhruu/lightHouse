@@ -1,14 +1,16 @@
 <script setup lang="ts">
-// import { computed } from "vue";
-// import { useStore } from "vuex";
+import { computed } from "vue";
+import { useStore } from "vuex";
 import menuBurger from "./components/menu-burger.vue";
 import MenuHeader from "./components/menu-header.vue";
 //theme
 import "primevue/resources/themes/lara-light-indigo/theme.css";
-// const store = useStore();
+const store = useStore();
+// store.commit('test/setData')
+store.dispatch("auth/whoAmI")
+const data = computed(() => store.state.data);
 
-// const data = computed(() => store.state.test.data);
-// store.commit('test/setData', 'не кусь')
+console.log(data)
 </script>
 
 <template>
@@ -56,7 +58,7 @@ import "primevue/resources/themes/lara-light-indigo/theme.css";
   }
 
   .p-dialog .p-dialog-header .p-dialog-header-icon:focus {
-    box-shadow: 0 0 0 0.2rem #0b8fb863;
+    box-shadow: none;
   }
 
   .p-colorpicker-panel {

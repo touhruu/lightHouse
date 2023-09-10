@@ -132,7 +132,6 @@ const addBoard = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
     height: 80px;
     background-color: #7070702e;
     border-radius: 8px;

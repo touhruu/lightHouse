@@ -26,7 +26,18 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
+import { useStore } from 'vuex';
 import DialogAddBoard from "../components/dialog-add-board.vue";
+
+const store = useStore();
+
+store.dispatch('board/getBoards');
+
+const board = computed(() => store.state.boards)
+
+console.log(board)
+
 </script>
 
 <style lang="scss" scoped>
@@ -38,16 +49,16 @@ import DialogAddBoard from "../components/dialog-add-board.vue";
   }
 
   &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
+    justify-items: stretch
   }
 
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
     height: 80px;
     background-color: #0b8fb863;
     border-radius: 8px;
